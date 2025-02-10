@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { COURSES } from '../db-data';
 import { CourseCardComponent } from './course-card/course-card.component';
+import { Course } from './model/course';
 
 @Component({
   selector: 'app-root',
@@ -20,4 +21,8 @@ export class AppComponent {
   constructor() { }
 
   ngOnInit() { }
+
+  onCourseSelected(course: Course) {
+    console.log('App Component - button clicked ...', course);
+  }
 }
