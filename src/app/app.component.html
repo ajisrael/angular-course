@@ -6,11 +6,8 @@
 
 <div class="courses">
 
-  <course-card [title]="coreCourse.description" [description]="coreCourse.longDescription"
-    [imgSrc]="coreCourse.iconUrl"></course-card>
-  <course-card [title]="rxjsCourse.description" [description]="rxjsCourse.longDescription"
-    [imgSrc]="rxjsCourse.iconUrl"></course-card>
-  <course-card [title]="ngrxCourse.description" [description]="ngrxCourse.longDescription"
-    [imgSrc]="ngrxCourse.iconUrl"></course-card>
+  <course-card [course]="coreCourse"></course-card>
+  <course-card [course]="rxjsCourse"></course-card>
+  <course-card [course]="ngrxCourse"></course-card>
 
 </div>

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Course } from '../model/course';
 
 @Component({
   selector: 'course-card',
@@ -8,14 +9,10 @@ import { Component, Input } from '@angular/core';
 })
 export class CourseCardComponent {
 
-  @Input()
-  title: string = 'Default title';
-
-  @Input()
-  description: string = 'Default description';
-
-  @Input()
-  imgSrc: string;
+  @Input({
+    required: true
+  })
+  course: Course;
 
   constructor() { }
 
