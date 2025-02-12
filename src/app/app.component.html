@@ -7,8 +7,10 @@
 <div>
   <div class="courses">
 
-    @for (course of courses; track course.id) {
-    <course-card [course]="course" (courseSelected)="onCourseSelected($event)" />
+    @for (course of courses; track course.id; let index = $index; let count = $count) {
+    <h1>Count: {{count}}</h1>
+
+    <course-card [course]="course" [index]="index" (courseSelected)="onCourseSelected($event)" />
     }
 
     @empty {
