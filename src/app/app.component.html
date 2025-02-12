@@ -7,10 +7,13 @@
 <div>
   <div class="courses">
 
-    @for (course of courses; track course.id; let index = $index; let count = $count) {
-    <h1>Count: {{count}}</h1>
+    <!-- specifications of `let var = $var` can be instead referenced directly (like `$first`), this just provides an example of how to rename-->
+    @for (course of courses; track course.id; let index = $index; let count = $count; let last =
+    $last; let even = $even; let odd = $odd) {
 
-    <course-card [course]="course" [index]="index" (courseSelected)="onCourseSelected($event)" />
+    <!-- the class.[class_name] will assing the css class to the component if the property evaluates to true-->
+    <course-card [course]="course" [index]="index" [class.is-first]="$first" [class.is-last]="last"
+      [class.is-even]="even" [class.is-odd]="odd" (courseSelected)="onCourseSelected($event)" />
     }
 
     @empty {
