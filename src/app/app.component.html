@@ -11,5 +11,9 @@
     <course-card [course]="course" (courseSelected)="onCourseSelected($event)" />
     }
 
+    @empty {
+    <h1>No courses found</h1>
+    }
+
   </div>
 </div>

@@ -12,7 +12,8 @@ import { Course } from './model/course';
 })
 export class AppComponent {
 
-  courses = COURSES;
+  //courses = COURSES;
+  courses = [];
 
   constructor() { }
 
