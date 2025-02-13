@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // required when using ngFor
 import { COURSES } from '../db-data';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { Course } from './model/course';
@@ -9,7 +8,7 @@ import { Course } from './model/course';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [CourseCardComponent, CommonModule]
+  imports: [CourseCardComponent]
 })
 export class AppComponent {
 
