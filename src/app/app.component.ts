@@ -21,4 +21,8 @@ export class AppComponent {
   onCourseSelected(course: Course) {
     console.log('App Component - button clicked ...', course);
   }
+
+  trackCourse(index: number, course: Course) {
+    return course.id;
+  }
 }
