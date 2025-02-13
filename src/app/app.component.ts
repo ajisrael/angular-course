@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; // required when using ngFor
 import { COURSES } from '../db-data';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { Course } from './model/course';
@@ -8,11 +9,11 @@ import { Course } from './model/course';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [CourseCardComponent]
+  imports: [CourseCardComponent, CommonModule]
 })
 export class AppComponent {
 
-  courses = [...COURSES];
+  courses = COURSES;
 
   constructor() { }
 
@@ -22,7 +23,4 @@ export class AppComponent {
     console.log('App Component - button clicked ...', course);
   }
 
-  trackCourse(index: number, course: Course) {
-    return course.id;
-  }
 }

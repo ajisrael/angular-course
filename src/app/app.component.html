@@ -7,21 +7,11 @@
 <div>
   <div class="courses">
 
-    <!-- `track <identifier>` is used to specify a unique identifier in the list for optimized rendering between diffs.
-    This can either be a propery on each element in the list, ex: `track course.id` or a function defined in the component for getting the unique id of the element.
-    This way Angular knows what has and has not already been rendered on a change. This is required with `@for`-->
-    <!-- specifications of `let var = $var` can be instead referenced directly (like `$first`), this just provides an example of how to rename-->
-    @for (course of courses; track trackCourse; let index = $index; let count = $count; let last =
-    $last; let even = $even; let odd = $odd) {
-
-    <!-- the class.[class_name] will assing the css class to the component if the property evaluates to true-->
-    <course-card [course]="course" [index]="index" [class.is-first]="$first" [class.is-last]="last"
-      [class.is-even]="even" [class.is-odd]="odd" (courseSelected)="onCourseSelected($event)" />
-    }
-
-    @empty {
-    <h1>No courses found</h1>
-    }
+    <!-- semicolons are required for *ngFor js code -->
+    <course-card
+      *ngFor="let course of courses; index as i; first as isFirst; last as isLast; even as isEven; odd as isOdd;"
+      [class.is-first]="isFirst" [class.is-last]="isLast" [class.is-even]="isEven" [class.is-odd]="isOdd"
+      (courseSelected)="onCourseSelected($event)" [course]="course" [cardIndex]="i + 1"></course-card>
 
   </div>
 </div>
