@@ -1,6 +1,7 @@
 import { Course } from './app/model/course';
 
 export const COURSES: any = [
+  undefined,
   {
     id: 1,
     description: 'Angular Core Deep Dive',
