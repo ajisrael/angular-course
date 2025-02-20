@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Course } from '../model/course';
 
 @Component({
@@ -7,7 +7,7 @@ import { Course } from '../model/course';
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css',
   standalone: true,
-  imports: [CommonModule]
+  imports: []
 })
 export class CourseCardComponent {
 
