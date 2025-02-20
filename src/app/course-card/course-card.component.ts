@@ -1,18 +1,18 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Course } from '../model/course';
 
 @Component({
   selector: 'course-card',
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css',
-  standalone: true
+  standalone: true,
+  imports: [CommonModule]
 })
 export class CourseCardComponent {
 
-  @Input({
-    required: true
-  })
-  course: Course;
+  @Input()
+  course: any;
 
   @Input({
     required: true
