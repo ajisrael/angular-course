@@ -28,13 +28,6 @@ export class CourseCardComponent {
 
   ngOnInit() { }
 
-  cardClasses() {
-    if (this.course.category == 'BEGINNER') {
-      return 'beginner';
-      // could also be an array like ['beginner']
-    }
-  }
-
   isImageVisible() {
     return this.course && this.course.iconUrl;
   }
@@ -43,5 +36,18 @@ export class CourseCardComponent {
     console.log("Card Component - button clicked ...");
 
     this.courseEmitter.emit(this.course);
+  }
+
+  cardClasses() {
+    if (this.course.category == 'BEGINNER') {
+      return 'beginner';
+      // could also be an array like ['beginner']
+    }
+  }
+
+  cardStyles() {
+    return {
+      'background-image': 'url(' + this.course.iconUrl + ')',
+    };
   }
 }
