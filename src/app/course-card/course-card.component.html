@@ -1,5 +1,5 @@
 @if (course) {
-<div [ngClass]="{'beginner':false, 'course-card': true}">
+<div [ngClass]="cardClasses()">
   <div class="course-title">
     {{cardIndex}} {{ course.description }}
   </div>

@@ -8,6 +8,7 @@ import { Course } from '../model/course';
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css',
   standalone: true,
+  // Need to import the common module into the component for it to use the `ngClass` directive
   imports: [CommonModule]
 })
 export class CourseCardComponent {
@@ -26,6 +27,13 @@ export class CourseCardComponent {
   constructor() { }
 
   ngOnInit() { }
+
+  cardClasses() {
+    return {
+      'beginner': true,
+      'course-card': true
+    }
+  }
 
   isImageVisible() {
     return this.course && this.course.iconUrl;
