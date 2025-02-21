@@ -14,7 +14,7 @@ import { Course } from '../model/course';
 export class CourseCardComponent {
 
   @Input()
-  course: any;
+  course: Course;
 
   @Input({
     required: true
@@ -29,9 +29,9 @@ export class CourseCardComponent {
   ngOnInit() { }
 
   cardClasses() {
-    return {
-      'beginner': true,
-      'course-card': true
+    if (this.course.category == 'BEGINNER') {
+      return 'beginner';
+      // could also be an array like ['beginner']
     }
   }
 
