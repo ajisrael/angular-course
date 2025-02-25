@@ -1,8 +1,13 @@
 @if (course) {
-<div class="course-card" [ngClass]="cardClasses()" [ngStyle]="cardStyles()">
+<div class="course-card" [ngClass]="cardClasses()">
   <div class="course-title">
     {{cardIndex}} {{ course.description }}
   </div>
+  @if (isImageVisible()) {
+  <img width="300" alt="Angular Logo" [src]="course.iconUrl">
+  } @else {
+  <p>No image is available.</p>
+  }
   <div class="course-description">
     {{ course.longDescription }}
   </div>
